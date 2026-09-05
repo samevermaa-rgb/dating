@@ -1,0 +1,150 @@
+
+.container {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffd6e7, #fff0f6);
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  max-width: 390px;
+  min-height: 280px;
+  padding: 32px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 105, 160, 0.15);
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(255, 92, 150, 0.15);
+}
+
+.message {
+  color: #d6336c;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 20px;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.message.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.message.hide {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.96);
+}
+
+.questionArea {
+  width: 100%;
+  animation: questionIn 0.5s ease both;
+}
+
+.finalQuestion {
+  margin: 0 0 30px;
+  color: #d6336c;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.buttons {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.buttons button {
+  min-width: 110px;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.2s ease;
+}
+
+.yesButton {
+  background: #ff6b9d;
+  color: white;
+  transform-origin: center;
+  box-shadow: 0 6px 18px rgba(255, 107, 157, 0.25);
+}
+
+.noButton {
+  background: #f1f1f1;
+  color: #555;
+}
+
+.noButton:hover {
+  background: #e7e7e7;
+}
+
+.buttons button:active {
+  transform: scale(0.95);
+}
+
+.successCard {
+  min-height: 250px;
+}
+
+.successEmoji {
+  font-size: 90px;
+  animation: success 0.7s ease both;
+}
+
+@keyframes questionIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes success {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  60% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 600px) {
+  .card {
+    min-height: 320px;
+    padding: 40px 32px;
+  }
+
+  .message {
+    font-size: 23px;
+  }
+}
+
